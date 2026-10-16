@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en-CA" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Parallel Vortex | Tech Consulting &amp; Simple Web Design in Ottawa</title>
+  <meta name="description" content="Plain-language tech help, practical IT guidance and simple Shopify or GoDaddy websites from Ottawa. Book a free 30-minute consultation over Google Meet.">
+  <meta name="theme-color" content="#262626">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Parallel Vortex">
+  <meta property="og:title" content="Parallel Vortex | Tech Consulting &amp; Simple Web Design in Ottawa">
+  <meta property="og:description" content="We make tech make sense. Book a free 30-minute consultation over Google Meet.">
+  <meta property="og:image" content="assets/img/hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23262626'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='%23fff' text-anchor='middle' letter-spacing='-1'%3EPV%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/hero.webp" type="image/webp">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.remove('no-js');
+      d.classList.add('js');
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) d.classList.add('reduced'); else d.classList.add('js-motion');
+      try { if (sessionStorage.getItem('pvPreloaderShown') === 'true') d.classList.add('skip-preloader'); } catch (e) {}
+    })();
+  </script>
+  <script src="js/config.js"></script>
+</head>
+<body data-logocolor="light">
+  <a class="skipLink" href="#main">Skip to content</a>
+
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-arrow" viewBox="0 0 12 12"><path d="M1 6h9.5M6.8 2.2 10.6 6l-3.8 3.8" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 14 14"><path d="M7 1v12M1 7h12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></symbol>
+      <symbol id="i-close" viewBox="0 0 14 14"><path d="M2 2l10 10M12 2 2 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M9 4.8V9l2.8 1.8" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></symbol>
+      <symbol id="i-video" viewBox="0 0 18 18"><rect x="1.5" y="4.5" width="10.5" height="9" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="m12 8 4.5-2.5v7L12 10" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7.4" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M1.6 9h14.8M9 1.6c2.2 2.1 3.2 4.6 3.2 7.4S11.2 14.3 9 16.4C6.8 14.3 5.8 11.8 5.8 9S6.8 3.7 9 1.6Z" fill="none" stroke="currentColor" stroke-width="1.1"/></symbol>
+      <symbol id="i-check" viewBox="0 0 18 18"><path d="m3.5 9.4 3.6 3.6 7.4-8" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 18 18"><path d="M9 16.5s5.5-5.1 5.5-9.2A5.5 5.5 0 0 0 3.5 7.3c0 4.1 5.5 9.2 5.5 9.2Z" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="9" cy="7.3" r="2" fill="none" stroke="currentColor" stroke-width="1.1"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 18 18"><rect x="3.5" y="8" width="11" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M6 8V5.8a3 3 0 0 1 6 0V8" fill="none" stroke="currentColor" stroke-width="1.1"/></symbol>
+      <symbol id="i-tag" viewBox="0 0 18 18"><path d="M2 9.6V2.8c0-.4.4-.8.8-.8h6.8L16 8.4 8.4 16 2 9.6Z" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><circle cx="5.6" cy="5.6" r="1.1" fill="currentColor"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 18 18"><rect x="1.5" y="1.5" width="15" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="1.1"/><path d="M5.6 7.6v5M5.6 5.2v.1M8.6 12.6V7.6m0 2.6c0-1.6 1-2.7 2.3-2.7s2.1.9 2.1 2.6v2.5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 18 18"><rect x="1.5" y="1.5" width="15" height="15" rx="4.2" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="9" cy="9" r="3.4" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="13.2" cy="4.8" r=".8" fill="currentColor"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 18 18"><path d="M10.2 16.5v-6.6h2.3l.4-2.7h-2.7V5.6c0-.8.3-1.3 1.4-1.3H13V1.9c-.3 0-1.1-.1-2.1-.1-2.1 0-3.4 1.2-3.4 3.5v1.9H5.2v2.7h2.3v6.6" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ==================== PRELOADER ==================== -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__wordWrapper">
+      <div class="preloader__section preloader__section--1">
+        <div class="preloader__word font-XXL" data-word="one"><span class="preloader__wordFl">S</span><span class="preloader__wordRl">implify</span></div>
+        <div class="preloader__word font-XXL" data-word="two"><span class="preloader__wordFl">E</span><span class="preloader__wordRl">xplain</span></div>
+      </div>
+      <div class="preloader__section preloader__section--2">
+        <div class="preloader__word font-XXL" data-word="three"><span class="preloader__wordFl">B</span><span class="preloader__wordRl">uild</span></div>
+        <div class="preloader__word font-XXL" data-word="four"><span class="preloader__wordFl">S</span><span class="preloader__wordRl">upport</span></div>
+      </div>
+    </div>
+    <div class="preloader__imageWrapper">
+      <img class="preloader__image" src="assets/img/hero.webp" alt="">
+      <div class="preloader__mark"><span class="wordmark"><b>Parallel</b><span>Vortex</span></span></div>
+    </div>
+  </div>
+
+  <!-- ==================== HEADER + MENU ==================== -->
+  <header class="mainHeader">
+    <div class="navigationMain" data-grid>
+      <div class="navigationMain__topBar">
+        <a href="#top" class="navigationMain__topBarLogo" aria-label="Parallel Vortex, back to top" data-scrollto="#top">
+          <span class="wordmark" aria-hidden="true"><b>Parallel</b><span>Vortex</span></span>
+        </a>
+        <div class="navigationMain__topBarItems">
+          <button type="button" class="buttonMenu" data-menu="closed" aria-expanded="false" aria-controls="mainNavigation" aria-label="Open menu">
+            <span class="buttonMenu__text font-XS" aria-hidden="true">
+              <span class="buttonMenu__textMenu">Menu</span>
+              <span class="buttonMenu__textClose">Close</span>
+            </span>
+            <svg class="menuLine" viewBox="0 0 29 29" fill="none" aria-hidden="true">
+              <path class="menuLineTwo" d="M4 18H25" stroke="currentColor" stroke-linecap="round"/>
+              <g class="menuLinesGroup">
+                <path class="menuLineOne" d="M4 11H25" stroke="currentColor" stroke-linecap="round"/>
+                <path class="menuLineThree" d="M4 11H25" stroke="currentColor" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav id="mainNavigation" class="navigationMain__dropDown" data-grid data-lenis-prevent aria-label="Main menu" aria-hidden="true" inert>
+        <div class="navigationMain__dropDownLine"></div>
+        <div class="navigationMain__dropDownWrapper">
+          <ul class="navigationMain__mainMenu">
+            <li class="navigationMain__label font-S--semibold" data-menuhead>Explore</li>
+            <li class="font-XL" data-menuitem><a class="navigationMain__mainMenuItem" href="#services">Services</a></li>
+            <li class="font-XL" data-menuitem><a class="navigationMain__mainMenuItem" href="#about">About</a></li>
+            <li class="font-XL" data-menuitem><a class="navigationMain__mainMenuItem" href="#how">How it works</a></li>
+            <li class="font-XL" data-menuitem><a class="navigationMain__mainMenuItem" href="#book">Book a consultation</a></li>
+            <li class="font-XL" data-menuitem><a class="navigationMain__mainMenuItem" href="#sessions">Sessions &amp; services</a></li>
+            <li class="font-XL" data-menuitem><a class="navigationMain__mainMenuItem" href="#contact">Contact</a></li>
+          </ul>
+          <ul class="navigationMain__subMenu">
+            <li class="navigationMain__label font-S--semibold" data-menuhead>Get started</li>
+            <li class="font-M" data-menusub><a class="navigationMain__subMenuItem" href="#book">Free 30-minute consultation</a></li>
+            <li class="font-M" data-menusub><a class="navigationMain__subMenuItem" href="#sessions">Pay for a session</a></li>
+            <li class="font-M" data-menusub><a class="navigationMain__subMenuItem" href="#contact">Send a message</a></li>
+          </ul>
+          <div class="navigationMain__bottom">
+            <div class="navigationMain__social" data-menufade>
+              <a class="buttonLine" data-color="white" data-social="linkedin" href="#" target="_blank" rel="noopener noreferrer"><span class="buttonLine__label font-S">LinkedIn</span><span class="buttonLine__line"><span></span><span></span></span></a>
+              <a class="buttonLine" data-color="white" data-social="instagram" href="#" target="_blank" rel="noopener noreferrer"><span class="buttonLine__label font-S">Instagram</span><span class="buttonLine__line"><span></span><span></span></span></a>
+              <a class="buttonLine" data-color="white" data-social="facebook" href="#" target="_blank" rel="noopener noreferrer"><span class="buttonLine__label font-S">Facebook</span><span class="buttonLine__line"><span></span><span></span></span></a>
+            </div>
+            <div class="navigationMain__contact">
+              <div class="contactInfo" data-menufade>
+                <p class="font-S--semibold contactInfo__label">Ottawa, Ontario</p>
+                <p class="font-S">Based in Ottawa, Canada</p>
+                <p class="font-S">Serving clients online, anywhere</p>
+              </div>
+              <div class="contactInfo" data-menufade>
+                <p class="font-S--semibold contactInfo__label">Consultations</p>
+                <p class="font-S">Free, 30 minutes</p>
+                <p class="font-S">Held over Google Meet</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="blob" aria-hidden="true"><span>Book a call</span></div>
+
+  <main id="main">
+    <!-- ==================== HERO + SERVICES ==================== -->
+    <section class="homeHero" id="top" aria-label="Introduction and services">
+      <div class="homeHero__main">
+        <div class="homeHero__media" aria-hidden="true">
+          <img class="homeHero__mainBackground" src="assets/img/hero.webp" alt="" fetchpriority="high">
+          <div class="homeHero__vortex"></div>
+        </div>
+        <div class="homeHero__mainOverlay" aria-hidden="true"></div>
+
+        <p class="homeHero__detail homeHero__detail--one font-S">Tech Consulting + Simple Web Design · Ottawa</p>
+        <p class="homeHero__detail homeHero__detail--two font-S">Plain-language help, online</p>
+        <button type="button" class="homeHero__detail homeHero__detail--three font-S" data-explore>
+          <span class="homeHero__explore--fine">Scroll to explore</span>
+          <span class="homeHero__explore--touch">Swipe up to explore</span>
+          <span class="buttonArrow buttonArrow--down" data-color="white" data-border aria-hidden="true">
+            <span class="button__arrow"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span>
+          </span>
+        </button>
+        <header class="homeHero__title">
+          <h1 class="font-3XL">We make tech make sense.</h1>
+          <a href="#book" class="buttonArrow homeHero__cta" data-color="white">
+            <span class="button__title">Book your free 30-minute consultation</span>
+            <span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span>
+          </a>
+        </header>
+      </div>
+
+      <div class="homeHero__categories" id="services" aria-label="Services">
+        <h2 class="sr-only">Services</h2>
+        <article class="svcCard" data-tone="ink" data-btnhover>
+          <a class="svcCard__image" href="#book" data-blob aria-label="Book a free consultation about Tech, Made Simple">
+            <img src="assets/img/svc-1.webp" alt="Two people at a laptop, one pointing to something on the screen" loading="lazy">
+          </a>
+          <div class="svcCard__wrap">
+            <div class="svcCard__content">
+              <a href="#book" class="buttonCircle svcCard__button" data-tonecolor aria-label="Book a consultation about Tech, Made Simple">
+                <svg class="icon"><use href="#i-plus"/></svg><span class="buttonCircle__background"></span>
+              </a>
+              <h3 class="svcCard__title font-XXL">Tech, Made Simple</h3>
+              <p class="svcCard__subtitle font-S">Research-backed explanations in plain language</p>
+              <span class="svcCard__count font-XS" aria-label="Service 1 of 4">1 / 4</span>
+              <div class="svcCard__thumb" aria-hidden="true"><img src="assets/img/svc-1.webp" alt="" loading="lazy"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="svcCard" data-tone="sky" data-btnhover>
+          <a class="svcCard__image" href="#book" data-blob aria-label="Book a free consultation about Everyday Tech Help">
+            <img src="assets/img/svc-2.webp" alt="Hands typing on a laptop keyboard" loading="lazy">
+          </a>
+          <div class="svcCard__wrap">
+            <div class="svcCard__content">
+              <a href="#book" class="buttonCircle svcCard__button" data-tonecolor aria-label="Book a consultation about Everyday Tech Help">
+                <svg class="icon"><use href="#i-plus"/></svg><span class="buttonCircle__background"></span>
+              </a>
+              <h3 class="svcCard__title font-XXL">Everyday Tech Help</h3>
+              <p class="svcCard__subtitle font-S">One-on-one help with email and your computer</p>
+              <span class="svcCard__count font-XS" aria-label="Service 2 of 4">2 / 4</span>
+              <div class="svcCard__thumb" aria-hidden="true"><img src="assets/img/svc-2.webp" alt="" loading="lazy"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="svcCard" data-tone="clay" data-btnhover>
+          <a class="svcCard__image" href="#book" data-blob aria-label="Book a free consultation about Simple Web Design">
+            <img src="assets/img/svc-3.webp" alt="Laptop on a bright desk showing website code" loading="lazy">
+          </a>
+          <div class="svcCard__wrap">
+            <div class="svcCard__content">
+              <a href="#book" class="buttonCircle svcCard__button" data-tonecolor aria-label="Book a consultation about Simple Web Design">
+                <svg class="icon"><use href="#i-plus"/></svg><span class="buttonCircle__background"></span>
+              </a>
+              <h3 class="svcCard__title font-XXL">Simple Web Design</h3>
+              <p class="svcCard__subtitle font-S">Clean, streamlined sites on Shopify and GoDaddy</p>
+              <span class="svcCard__count font-XS" aria-label="Service 3 of 4">3 / 4</span>
+              <div class="svcCard__thumb" aria-hidden="true"><img src="assets/img/svc-3.webp" alt="" loading="lazy"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="svcCard" data-tone="sand" data-btnhover>
+          <a class="svcCard__image" href="#book" data-blob aria-label="Book a free consultation about Practical IT Guidance">
+            <img src="assets/img/svc-4.webp" alt="Overhead view of a shared desk with laptops, notebooks and phones" loading="lazy">
+          </a>
+          <div class="svcCard__wrap">
+            <div class="svcCard__content">
+              <a href="#book" class="buttonCircle svcCard__button" data-tonecolor aria-label="Book a consultation about Practical IT Guidance">
+                <svg class="icon"><use href="#i-plus"/></svg><span class="buttonCircle__background"></span>
+              </a>
+              <h3 class="svcCard__title font-XXL">Practical IT Guidance</h3>
+              <p class="svcCard__subtitle font-S">The right tools, and a simple way to use them</p>
+              <span class="svcCard__count font-XS" aria-label="Service 4 of 4">4 / 4</span>
+              <div class="svcCard__thumb" aria-hidden="true"><img src="assets/img/svc-4.webp" alt="" loading="lazy"></div>
+            </div>
+          </div>
+        </article>
+
+        <div class="svcCard svcCard--last" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="blockIntro" id="about" data-grid aria-labelledby="about-title">
+      <h2 class="blockIntro__title font-XXL" id="about-title">Plain Language. Honest Advice. Human First. Always Curious.</h2>
+      <p class="blockIntro__tagline font-S">Simplify. Explain. Build. Support.</p>
+      <div class="blockIntro__text font-XM">
+        <p>Parallel Vortex is led by Hansen, who has spent close to 30 years in tech, including 8 years supporting teams in the high-stakes mining sector. He is also a Canadian recording artist and songwriter, which brings a creative, human side to how he explains technology.</p>
+        <p>If something isn't our expertise, we'll tell you, and point you to someone who's a better fit.</p>
+      </div>
+      <div class="blockIntro__button">
+        <a href="#book" class="buttonArrow" data-color="slate">
+          <span class="button__title">Book a free consultation</span>
+          <span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section class="process" id="how" data-grid aria-labelledby="how-title">
+      <div class="process__panel">
+        <p class="process__tagline font-S" data-reveal><span>How it works</span><span>4 steps</span></p>
+        <h2 class="process__title font-L" id="how-title" data-reveal>Four simple steps. No jargon, no wasted time.</h2>
+        <ol class="process__steps">
+          <li class="step" data-reveal="step">
+            <span class="step__num font-XS--semibold">01</span>
+            <div><h3 class="step__title font-M">Book your free 30-minute call</h3><p class="step__text font-S">Pick a time that suits you. We meet over Google Meet.</p></div>
+          </li>
+          <li class="step" data-reveal="step">
+            <span class="step__num font-XS--semibold">02</span>
+            <div><h3 class="step__title font-M">We listen and explain your options in plain language</h3><p class="step__text font-S">You tell us what's going on. We lay out your options clearly, with no pressure.</p></div>
+          </li>
+          <li class="step" data-reveal="step">
+            <span class="step__num font-XS--semibold">03</span>
+            <div><h3 class="step__title font-M">We build or fix it, simply</h3><p class="step__text font-S">Nothing overbuilt. Just what you need, done right.</p></div>
+          </li>
+          <li class="step" data-reveal="step">
+            <span class="step__num font-XS--semibold">04</span>
+            <div><h3 class="step__title font-M">Ongoing support, whenever you need it</h3><p class="step__text font-S">Questions later on? We're a message away.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==================== BOOKING ==================== -->
+    <section class="book" id="book" data-grid aria-labelledby="book-title">
+      <header class="sectionHead" data-reveal>
+        <div>
+          <p class="sectionHead__eyebrow font-S">Book a consultation</p>
+          <h2 class="font-L" id="book-title" style="margin-top:1.2rem">Book your free 30-minute consultation</h2>
+        </div>
+        <p class="sectionHead__text font-S">Find out if Parallel Vortex is the right fit. No cost, no obligation.</p>
+      </header>
+
+      <div class="book__info" data-reveal>
+        <p class="book__lede font-XM">Tell us what's going on. We'll listen, explain your options in plain language, and tell you honestly if we're the right fit.</p>
+        <ul class="book__facts font-S">
+          <li class="book__fact"><svg class="icon"><use href="#i-clock"/></svg>30 minutes, completely free</li>
+          <li class="book__fact"><svg class="icon"><use href="#i-video"/></svg>Held over Google Meet</li>
+          <li class="book__fact"><svg class="icon"><use href="#i-globe"/></svg>Times in Eastern Time (Ottawa)</li>
+          <li class="book__fact"><svg class="icon"><use href="#i-check"/></svg>No obligation, no sales pitch</li>
+        </ul>
+      </div>
+
+      <div class="book__widget" data-reveal>
+        <div class="booker" id="booker" aria-label="Booking calendar">
+          <!-- Rendered by js/booking.js -->
+          <noscript><p class="font-S">Please enable JavaScript to choose a time.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SESSIONS & SERVICES ==================== -->
+    <section class="sessions" id="sessions" data-grid aria-labelledby="sessions-title">
+      <header class="sectionHead" data-reveal>
+        <div>
+          <p class="sectionHead__eyebrow font-S">Sessions &amp; services</p>
+          <h2 class="font-L" id="sessions-title" style="margin-top:1.2rem">Sessions &amp; Services</h2>
+        </div>
+        <p class="sectionHead__text font-S">Already spoken with us? Pay for your session or project here.</p>
+      </header>
+
+      <div class="sessions__grid">
+        <article class="sessionCard" data-reveal="card">
+          <div class="sessionCard__media"><div data-imageanimate><img src="assets/img/session-1.webp" alt="Three people talking around a table with laptops" loading="lazy"></div></div>
+          <span class="sessionCard__count font-XS">01</span>
+          <h3 class="sessionCard__title font-M">Tech Session</h3>
+          <p class="sessionCard__text font-S">One hour of one-on-one help. Bring your questions and we'll work through them together.</p>
+          <div class="sessionCard__price"><p class="sessionCard__priceInner font-XS--semibold"><svg class="icon"><use href="#i-tag"/></svg>Pricing discussed on your free consultation</p></div>
+          <div class="sessionCard__actions">
+            <button type="button" class="buttonArrow" data-color="dark" data-pay="stripe" data-service="tech"><span class="button__title">Pay with Card</span><span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span></button>
+            <button type="button" class="buttonArrow" data-color="slate" data-pay="paypal" data-service="tech"><span class="button__title">Pay with PayPal</span><span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span></button>
+          </div>
+        </article>
+
+        <article class="sessionCard" data-reveal="card">
+          <div class="sessionCard__media"><div data-imageanimate><img src="assets/img/session-2.webp" alt="Tidy desk by a bright window with a laptop and monitor" loading="lazy"></div></div>
+          <span class="sessionCard__count font-XS">02</span>
+          <h3 class="sessionCard__title font-M">Website Build</h3>
+          <p class="sessionCard__text font-S">A simple, streamlined website on Shopify or GoDaddy. Clean, quick to load and easy for you to manage.</p>
+          <div class="sessionCard__price"><p class="sessionCard__priceInner font-XS--semibold"><svg class="icon"><use href="#i-tag"/></svg>Pricing discussed on your free consultation</p></div>
+          <div class="sessionCard__actions">
+            <button type="button" class="buttonArrow" data-color="dark" data-pay="stripe" data-service="website"><span class="button__title">Pay with Card</span><span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span></button>
+            <button type="button" class="buttonArrow" data-color="slate" data-pay="paypal" data-service="website"><span class="button__title">Pay with PayPal</span><span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span></button>
+          </div>
+        </article>
+
+        <article class="sessionCard" data-reveal="card">
+          <div class="sessionCard__media"><div data-imageanimate><img src="assets/img/session-3.webp" alt="Two people working side by side at computers in a bright office" loading="lazy"></div></div>
+          <span class="sessionCard__count font-XS">03</span>
+          <h3 class="sessionCard__title font-M">Ongoing Support</h3>
+          <p class="sessionCard__text font-S">Help when you need it. Quick answers and fixes, without the runaround.</p>
+          <div class="sessionCard__price"><p class="sessionCard__priceInner font-XS--semibold"><svg class="icon"><use href="#i-tag"/></svg>Pricing discussed on your free consultation</p></div>
+          <div class="sessionCard__actions">
+            <button type="button" class="buttonArrow" data-color="dark" data-pay="stripe" data-service="support"><span class="button__title">Pay with Card</span><span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span></button>
+            <button type="button" class="buttonArrow" data-color="slate" data-pay="paypal" data-service="support"><span class="button__title">Pay with PayPal</span><span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span></button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="contact" id="contact" data-grid aria-labelledby="contact-title">
+      <header class="sectionHead" data-reveal>
+        <div>
+          <p class="sectionHead__eyebrow font-S">Contact</p>
+          <h2 class="font-L" id="contact-title" style="margin-top:1.2rem">Have a quick question?</h2>
+        </div>
+        <p class="sectionHead__text font-S">Send a message and we'll reply by email.</p>
+      </header>
+
+      <div class="contact__intro" data-reveal>
+        <p class="font-XM">Not sure where to start? Tell us a little about what you need. We'll point you in the right direction, even if that's someone else.</p>
+        <p class="contact__place font-S--semibold"><svg class="icon"><use href="#i-pin"/></svg>Ottawa, Ontario · Serving clients online</p>
+        <a href="#book" class="buttonArrow" data-color="slate">
+          <span class="button__title">Book a free consultation</span>
+          <span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+
+      <div class="contact__formWrap" data-reveal>
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="field">
+            <label class="field__label font-XS" for="c-name">Name</label>
+            <input class="field__input" id="c-name" name="name" type="text" autocomplete="name" required>
+            <span class="field__error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label class="field__label font-XS" for="c-email">Email</label>
+            <input class="field__input" id="c-email" name="email" type="email" autocomplete="email" required>
+            <span class="field__error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label class="field__label font-XS" for="c-message">Message</label>
+            <textarea class="field__input" id="c-message" name="message" rows="4" required></textarea>
+            <span class="field__error" aria-live="polite"></span>
+          </div>
+          <div class="contact__actions">
+            <button type="submit" class="buttonArrow" data-color="dark">
+              <span class="button__title">Send message</span>
+              <span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span>
+            </button>
+          </div>
+        </form>
+        <div class="success" id="contactSuccess" hidden tabindex="-1">
+          <span class="success__icon"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="m3.5 9.4 3.6 3.6 7.4-8" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3 class="font-L" data-success-title>Thanks. Your message is in.</h3>
+          <p class="success__text font-S">We'll be in touch by email soon. If it's easier to talk it through, you can also book a free 30-minute consultation.</p>
+          <button type="button" class="buttonArrow" data-color="slate" data-contact-reset><span class="button__title">Send another message</span><span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="navigationFooter" data-grid>
+    <div class="navigationFooter__topSection">
+      <div class="navigationFooter__mainImage" aria-hidden="true"><img src="assets/img/footer.webp" alt="" loading="lazy"></div>
+      <div class="navigationFooter__line"></div>
+      <ul class="navigationFooter__mainMenu">
+        <li class="navigationFooter__label font-S--semibold">Explore</li>
+        <li class="font-XL"><a class="navigationFooter__menuItem" href="#services">Services</a></li>
+        <li class="font-XL"><a class="navigationFooter__menuItem" href="#about">About</a></li>
+        <li class="font-XL"><a class="navigationFooter__menuItem" href="#how">How it works</a></li>
+        <li class="font-XL"><a class="navigationFooter__menuItem" href="#book">Book a consultation</a></li>
+        <li class="font-XL"><a class="navigationFooter__menuItem" href="#sessions">Sessions &amp; services</a></li>
+        <li class="font-XL"><a class="navigationFooter__menuItem" href="#contact">Contact</a></li>
+      </ul>
+      <div class="navigationFooter__subMenu">
+        <span class="navigationFooter__label font-S--semibold">Get started</span>
+        <div class="navigationFooter__cta">
+          <p class="font-L">Free 30-minute consultation over Google Meet.</p>
+          <a href="#book" class="buttonArrow" data-color="white">
+            <span class="button__title">Book your free consultation</span>
+            <span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigationFooter__bottomSection">
+      <div class="navigationFooter__bottomSection--1">
+        <a href="#top" class="navigationFooter__logo" data-scrollto="#top" aria-label="Parallel Vortex, back to top"><span class="wordmark" aria-hidden="true"><b>Parallel</b><span>Vortex</span></span></a>
+        <nav class="navigationFooter__bottomMenu" aria-label="Footer">
+          <button type="button" class="navigationFooter__toggle" aria-expanded="false" aria-controls="footerList">Explore <svg class="icon"><use href="#i-plus"/></svg></button>
+          <ul class="navigationFooter__list" id="footerList">
+            <li data-footeritem><a class="buttonLine" data-hideline href="#services"><span class="buttonLine__label">Services</span><span class="buttonLine__line"><span></span><span></span></span></a></li>
+            <li data-footeritem><a class="buttonLine" data-hideline href="#about"><span class="buttonLine__label">About</span><span class="buttonLine__line"><span></span><span></span></span></a></li>
+            <li data-footeritem><a class="buttonLine" data-hideline href="#how"><span class="buttonLine__label">How it works</span><span class="buttonLine__line"><span></span><span></span></span></a></li>
+          </ul>
+          <span class="navigationFooter__sep" aria-hidden="true"></span>
+          <ul class="navigationFooter__list">
+            <li><a class="buttonLine" data-hideline href="#book"><span class="buttonLine__label">Book</span><span class="buttonLine__line"><span></span><span></span></span></a></li>
+            <li><a class="buttonLine" data-hideline href="#sessions"><span class="buttonLine__label">Sessions</span><span class="buttonLine__line"><span></span><span></span></span></a></li>
+            <li><a class="buttonLine" data-hideline href="#contact"><span class="buttonLine__label">Contact</span><span class="buttonLine__line"><span></span><span></span></span></a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="navigationFooter__bottomSection--2">
+        <div class="navigationFooter__contactOne contactInfo">
+          <p class="font-S--semibold contactInfo__label">Ottawa, Ontario</p>
+          <p class="font-S">Based in Ottawa, Canada</p>
+          <p class="font-S">Serving clients online, anywhere</p>
+        </div>
+        <div class="navigationFooter__contactTwo contactInfo">
+          <p class="font-S--semibold contactInfo__label">Consultations</p>
+          <p class="font-S">Free, 30 minutes</p>
+          <p class="font-S">Held over Google Meet</p>
+        </div>
+        <div class="navigationFooter__social">
+          <a class="buttonLine" data-color="white" data-social="linkedin" href="#" target="_blank" rel="noopener noreferrer" aria-label="Parallel Vortex on LinkedIn"><span class="buttonLine__label"><svg class="icon"><use href="#i-linkedin"/></svg>LinkedIn</span><span class="buttonLine__line"><span></span><span></span></span></a>
+          <a class="buttonLine" data-color="white" data-social="instagram" href="#" target="_blank" rel="noopener noreferrer" aria-label="Parallel Vortex on Instagram"><span class="buttonLine__label"><svg class="icon"><use href="#i-instagram"/></svg>Instagram</span><span class="buttonLine__line"><span></span><span></span></span></a>
+          <a class="buttonLine" data-color="white" data-social="facebook" href="#" target="_blank" rel="noopener noreferrer" aria-label="Parallel Vortex on Facebook"><span class="buttonLine__label"><svg class="icon"><use href="#i-facebook"/></svg>Facebook</span><span class="buttonLine__line"><span></span><span></span></span></a>
+        </div>
+        <button type="button" class="navigationFooter__top" data-scrollto="#top">Back to top <svg class="icon"><use href="#i-arrow"/></svg></button>
+      </div>
+
+      <div class="navigationFooter__bottomSection--3 font-S">
+        <p>© 2026 Parallel Vortex. All rights reserved.</p>
+        <p>Tech Consulting + Simple Web Design</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== CHECKOUT MODAL ==================== -->
+  <div class="modal" id="checkout" role="dialog" aria-modal="true" aria-labelledby="checkout-title" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__scroller" data-close-outside data-lenis-prevent>
+      <div class="modal__panel" tabindex="-1">
+        <button type="button" class="buttonCircle buttonCircle--sm modal__close" data-close aria-label="Close checkout"><svg class="icon"><use href="#i-close"/></svg><span class="buttonCircle__background"></span></button>
+        <div class="modal__body"><!-- Rendered by js/checkout.js --></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/forms.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

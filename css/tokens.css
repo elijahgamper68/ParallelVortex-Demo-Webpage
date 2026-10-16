@@ -1,0 +1,51 @@
+/* Design tokens (palette, type, easing) */
+:root {
+  /* Palette */
+  --white: #fff;
+  --grey-wash: #f8f8f8;
+  --mist: #ececec;
+  --slate: #d6d6d6;
+  --stone: #a3a3a3;
+  --grey: #747474;
+  --coal: #595656;
+  --off-black: #262626;
+  --night-black: #111;
+  --glass: #0e0e0e99;
+  --overlay: #000c;
+
+  /* Type */
+  --font: 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif;
+  --fs-3xl: clamp(4.6rem, .25rem + 5.6640625vw, 7.5rem);
+  --fs-xxl: clamp(4.4rem, .2857142857rem + 5.3571428571vw, 5.6rem);
+  --fs-xl: clamp(3.2rem, -2.9714285714rem + 8.0357142857vw, 5rem);
+  --fs-l: clamp(2.8rem, -.6285714286rem + 4.4642857143vw, 3.8rem);
+  --fs-m: clamp(2.4rem, 1.0285714286rem + 1.7857142857vw, 2.8rem);
+  --fs-xm: clamp(2rem, .6285714286rem + 1.7857142857vw, 2.4rem);
+  --fs-body: 1.6rem;
+  --fs-s: 1.4rem;
+  --fs-xs: 1.2rem;
+
+  /* Motion */
+  --ease-ui: cubic-bezier(0, 0, .13, .99);
+  --ease-reveal: cubic-bezier(.14, .83, .4, 1);
+  --ease-std: cubic-bezier(.4, 0, .2, 1);
+
+  /* Layout */
+  --row-gap: 0;
+  --column-gap: 1rem;
+  --gutter: 1.5rem;
+  --cut: 2rem;
+}
+
+@media (min-width: 768px) {
+  :root { --gutter: 3rem; }
+}
+@media (min-width: 1280px) {
+  :root { --gutter: 4rem; }
+}
+
+/* Service card colour sets (main / content / contrast) */
+[data-tone='ink']   { --toneMain: rgb(44, 56, 71);   --toneContent: #fff;    --toneContrast: #262626; }
+[data-tone='sky']   { --toneMain: rgb(206, 216, 226); --toneContent: #262626; --toneContrast: #fff; }
+[data-tone='clay']  { --toneMain: rgb(140, 88, 66);   --toneContent: #fff;    --toneContrast: #262626; }
+[data-tone='sand']  { --toneMain: rgb(228, 210, 188); --toneContent: #262626; --toneContrast: #fff; }
