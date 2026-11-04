@@ -227,32 +227,7 @@ textarea.field__input { min-height: 9rem; font-size: var(--fs-body); line-height
 .field-row--3 { grid-template-columns: 2fr 1fr 1fr; }
 @media (max-width: 479px) { .field-row--3 { grid-template-columns: 1fr 1fr; } .field-row--3 > :first-child { grid-column: 1 / -1; } }
 
-/* ==========================================================================
-   Modal (checkout)
-   ========================================================================== */
-.modal { position: fixed; inset: 0; z-index: 950; display: none; }
-.modal.is-open { display: block; }
-.modal__backdrop {
-  position: absolute; inset: 0; background: var(--overlay);
-  -webkit-backdrop-filter: blur(1.5rem); backdrop-filter: blur(1.5rem); opacity: 0;
-}
-.modal__scroller { position: absolute; inset: 0; overflow-y: auto; overscroll-behavior: contain; display: flex; padding: 2rem 1.5rem; }
-.modal__panel {
-  --cut: 3rem;
-  position: relative; margin: auto; width: 100%; max-width: 54rem; background: var(--white); color: var(--night-black);
-  padding: 3.2rem 2.4rem 3rem; clip-path: polygon(0 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% 100%, 0 100%);
-}
-@media (min-width: 768px) { .modal__panel { padding: 4.5rem 4.5rem 4rem; } }
-.modal__close { position: absolute; top: 1.6rem; right: 4.2rem; }
-.modal__eyebrow { color: var(--coal); display: block; margin-bottom: 1.2rem; }
-.modal__title { margin-bottom: .6rem; padding-right: 4rem; }
-.modal__sub { color: var(--coal); margin-bottom: 3rem; }
-.modal__form { display: flex; flex-direction: column; gap: 1.6rem; }
-.modal__actions { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
-.modal__note { color: var(--grey); display: flex; align-items: center; gap: .6rem; }
-.modal__step[hidden] { display: none; }
-
-/* Success state shared by booking / checkout / contact */
+/* Success state shared by booking / contact */
 .success { display: flex; flex-direction: column; align-items: flex-start; gap: 1.6rem; }
 .success__icon {
   width: 5.6rem; height: 5.6rem; border-radius: 50%; border: .1rem solid currentColor;

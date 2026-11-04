@@ -1,7 +1,7 @@
 /* ==========================================================================
    Parallel Vortex: core motion + navigation
    Smooth scroll (Lenis), preloader, hero + services track, menu overlay,
-   scroll reveals, footer. Booking / checkout / contact live in their own files.
+   scroll reveals, footer. Booking / contact live in their own files.
    ========================================================================== */
 (function () {
   'use strict';

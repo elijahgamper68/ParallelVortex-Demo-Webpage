@@ -11,22 +11,8 @@
     emailFormat: 'That email address doesn\'t look quite right.',
     message: 'Please add a short message.',
     needs: 'Tell us a little about what you need. A sentence or two is plenty.',
-    amount: 'Please enter the amount you agreed on.',
-    card: 'Please enter a valid card number.',
-    expiry: 'Use MM / YY, with a date in the future.',
-    cvc: 'Three or four digits.',
     generic: 'Please fill this in.',
   };
-
-  function luhn(num) {
-    var sum = 0, alt = false;
-    for (var i = num.length - 1; i >= 0; i--) {
-      var n = parseInt(num.charAt(i), 10);
-      if (alt) { n *= 2; if (n > 9) n -= 9; }
-      sum += n; alt = !alt;
-    }
-    return sum % 10 === 0;
-  }
 
   function check(input) {
     var v = (input.value || '').trim();
@@ -34,16 +20,6 @@
     if (input.required && !v) return messages[kind] || messages.generic;
     if (!v) return '';
     if (input.type === 'email' && !EMAIL.test(v)) return messages.emailFormat;
-    if (kind === 'amount') { var a = parseFloat(v.replace(/[^0-9.]/g, '')); if (!(a > 0)) return messages.amount; }
-    if (kind === 'card') { var d = v.replace(/\D/g, ''); if (d.length < 13 || d.length > 19 || !luhn(d)) return messages.card; }
-    if (kind === 'expiry') {
-      var m = v.replace(/\s/g, '').match(/^(\d{2})\/(\d{2})$/);
-      if (!m) return messages.expiry;
-      var mm = +m[1], yy = 2000 + +m[2], now = new Date();
-      if (mm < 1 || mm > 12) return messages.expiry;
-      if (yy < now.getFullYear() || (yy === now.getFullYear() && mm < now.getMonth() + 1)) return messages.expiry;
-    }
-    if (kind === 'cvc' && !/^\d{3,4}$/.test(v)) return messages.cvc;
     return '';
   }
 

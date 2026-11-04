@@ -4,7 +4,7 @@
 
    mode: 'demo' runs every flow with built-in demo screens (no accounts needed).
          'live' uses the real services below. Anything left empty in live mode
-         falls back gracefully (e.g. a payment button with no link is hidden).
+         falls back gracefully (e.g. no booking link shows "Request a time").
    After editing, run:  node tools/go-live.js   to check everything is ready.
    ========================================================================== */
 window.PV_CONFIG = {
@@ -20,13 +20,6 @@ window.PV_CONFIG = {
     // Google Calendar appointment schedule booking page link,
     // e.g. 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ...'
     googleScheduleUrl: '',
-  },
-
-  // Stripe Payment Links (set "customer chooses what to pay") and PayPal links
-  // (e.g. 'https://www.paypal.com/paypalme/yourname'), one per service.
-  payments: {
-    stripe: { tech: '', website: '', support: '' },
-    paypal: { tech: '', website: '', support: '' },
   },
 
   contact: {

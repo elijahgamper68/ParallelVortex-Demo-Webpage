@@ -315,10 +315,7 @@
 .sessionCard__text { margin-top: 1rem; color: var(--coal); max-width: 36rem; }
 .sessionCard__price { margin-top: auto; padding-top: 2.4rem; }
 .sessionCard__priceInner { border-top: .1rem solid var(--slate); padding-top: 1.6rem; display: flex; gap: .8rem; align-items: center; color: var(--off-black); }
-.sessionCard__actions { display: flex; flex-direction: column; gap: 2rem; margin-top: 2.6rem; }
-@media (min-width: 480px) and (max-width: 767px) { .sessionCard__actions { flex-direction: row; gap: 3rem; } }
-.sessionCard__actions .buttonArrow { width: 100%; justify-content: space-between; }
-.sessionCard__actions .button__title { flex: 1; text-align: left; }
+.sessionCard__actions { margin-top: 2.6rem; }
 
 /* ==========================================================================
    Contact

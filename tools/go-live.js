@@ -55,17 +55,6 @@ else if (https(c.endpoint)) ok('Contact form', 'endpoint ' + c.endpoint);
 else if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.formsubmitEmail || '')) ok('Contact form', 'FormSubmit to ' + c.formsubmitEmail + ' (confirm the activation email after the first test message)');
 else miss('Contact form', 'no backend set. Messages would not be delivered');
 
-// --- Payments
-const pay = C.payments || {};
-const services = { tech: 'Tech Session', website: 'Website Build', support: 'Ongoing Support' };
-for (const [key, name] of Object.entries(services)) {
-  const s = https(pay.stripe && pay.stripe[key]);
-  const p = https(pay.paypal && pay.paypal[key]);
-  if (s && p) ok('Payments: ' + name, 'card + PayPal');
-  else if (s || p) warn('Payments: ' + name, (s ? 'card only' : 'PayPal only') + '. The missing button is hidden');
-  else warn('Payments: ' + name, 'no links. The card will show "Book a free consultation" instead');
-}
-
 // --- Social
 const generic = /^https:\/\/(www\.)?(linkedin|instagram|facebook)\.com\/?$/i;
 const social = C.social || {};
