@@ -25,15 +25,30 @@
   var isOpen = false;
 
   /* ---------- Triggers ---------- */
+  var LIVE = CFG.mode === 'live';
+  var linkFor = function (method, service) {
+    var u = PAY[method] && PAY[method][service];
+    return /^https:\/\/[^\s"']+$/i.test(u || '') ? u : '';
+  };
+
   document.querySelectorAll('[data-pay]').forEach(function (btn) {
+    var url = linkFor(btn.dataset.pay, btn.dataset.service);
+    if (LIVE && !url) { btn.hidden = true; return; }
+    if (url) btn.setAttribute('aria-label', btn.textContent.trim() + ' (opens a secure payment page in a new tab)');
     btn.addEventListener('click', function () {
-      var method = btn.dataset.pay, service = btn.dataset.service;
-      var url = PAY[method] && PAY[method][service];
       if (url) { window.open(url, '_blank', 'noopener'); return; }
       lastTrigger = btn;
-      open(method, service);
+      open(btn.dataset.pay, btn.dataset.service);
     });
   });
+
+  // Live mode: a service with no payment links points to the free consultation instead
+  if (LIVE) {
+    document.querySelectorAll('.sessionCard__actions').forEach(function (actions) {
+      if (actions.querySelector('[data-pay]:not([hidden])')) return;
+      actions.innerHTML = '<a href="#book" class="buttonArrow" data-color="dark"><span class="button__title">Book a free consultation</span><span class="button__arrow" aria-hidden="true">' + ARROW + '</span></a>';
+    });
+  }
 
   /* ---------- Templates ---------- */
   function field(id, label, attrs, extra) {

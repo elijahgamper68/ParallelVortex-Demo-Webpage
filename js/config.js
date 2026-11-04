@@ -1,36 +1,55 @@
 /* ==========================================================================
    Parallel Vortex site settings
-   Everything runs in demo mode with nothing filled in.
-   To go live, fill in the values below. No other file needs to change.
+   This is the only file that needs editing to go live. See LAUNCH.md.
+
+   mode: 'demo' runs every flow with built-in demo screens (no accounts needed).
+         'live' uses the real services below. Anything left empty in live mode
+         falls back gracefully (e.g. a payment button with no link is hidden).
+   After editing, run:  node tools/go-live.js   to check everything is ready.
    ========================================================================== */
 window.PV_CONFIG = {
+  mode: 'demo',
+
+  // The public address of the site, e.g. 'https://parallelvortex.ca'
+  siteUrl: '',
+
   booking: {
-    // 'demo'     = built-in calendar, time slots, form and confirmation
-    // 'calendly' = swaps the widget for a Calendly inline embed
-    mode: 'demo',
-    calendlyUrl: '', // e.g. https://calendly.com/parallel-vortex/30min
+    // Use ONE of these. Calendly wins if both are filled.
+    // Calendly: the event link, e.g. 'https://calendly.com/parallel-vortex/30min'
+    calendlyUrl: '',
+    // Google Calendar appointment schedule booking page link,
+    // e.g. 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ...'
+    googleScheduleUrl: '',
   },
 
-  // Leave a link empty to use the demo checkout for that button.
-  // Paste a Stripe Payment Link / PayPal link to send visitors there instead.
+  // Stripe Payment Links (set "customer chooses what to pay") and PayPal links
+  // (e.g. 'https://www.paypal.com/paypalme/yourname'), one per service.
   payments: {
     stripe: { tech: '', website: '', support: '' },
     paypal: { tech: '', website: '', support: '' },
   },
 
   contact: {
-    // Empty = demo success message. Otherwise the form POSTs JSON here
-    // (works with Formspree, Getform, Basin, or your own endpoint).
+    // Pick one way to receive contact-form messages:
+    // 1. Hosting on Netlify? Set netlify: true. Messages appear in the Netlify
+    //    dashboard and can be emailed to you (Site > Forms > Notifications).
+    netlify: false,
+    // 2. Any form service that accepts JSON, e.g. Formspree:
+    //    'https://formspree.io/f/abcdwxyz'
     endpoint: '',
+    // 3. FormSubmit (no account): just the email address that should receive
+    //    messages. The first message triggers a one-time confirmation email.
+    formsubmitEmail: '',
   },
 
+  // Real profile links. Leave one as '' to hide that link everywhere.
   social: {
     linkedin: 'https://www.linkedin.com/',
     instagram: 'https://www.instagram.com/',
     facebook: 'https://www.facebook.com/',
   },
 
-  // Booking availability (demo mode)
+  // Demo booking availability
   timezone: 'America/Toronto',
   slots: { start: '09:00', end: '17:00', stepMin: 30, weeksAhead: 6, minNoticeMin: 120 },
 

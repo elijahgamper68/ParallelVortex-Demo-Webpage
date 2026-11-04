@@ -1,7 +1,7 @@
 /* ==========================================================================
    Booking widget: calendar > time slot > details > confirmation
-   Set PV_CONFIG.booking.mode = 'calendly' (plus calendlyUrl) to swap in a
-   Calendly inline embed instead. Nothing else needs to change.
+   Live mode swaps in the real scheduler from PV_CONFIG.booking:
+   a Calendly inline embed, or a Google Calendar appointment schedule.
    ========================================================================== */
 (function () {
   'use strict';
@@ -11,17 +11,49 @@
   var PV = window.PV || {};
   var CFG = window.PV_CONFIG || {};
   var BOOK = CFG.booking || {};
+  var LIVE = CFG.mode === 'live';
   var TZ = CFG.timezone || 'America/Toronto';
   var SL = Object.assign({ start: '09:00', end: '17:00', stepMin: 30, weeksAhead: 6, minNoticeMin: 120 }, CFG.slots || {});
+  var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); };
+  var isHttps = function (u) { return /^https:\/\/[^\s"']+$/i.test(u || ''); };
 
-  /* ---------- Calendly mode ---------- */
-  if (BOOK.mode === 'calendly' && BOOK.calendlyUrl) {
+  /* ---------- Live: Calendly ---------- */
+  if (LIVE && isHttps(BOOK.calendlyUrl)) {
     var url = BOOK.calendlyUrl + (BOOK.calendlyUrl.indexOf('?') > -1 ? '&' : '?') + 'hide_gdpr_banner=1';
-    root.innerHTML = '<div class="calendly-inline-widget booker__calendly" data-url="' + url.replace(/"/g, '&quot;') + '"></div>';
+    root.classList.add('booker--embed');
+    root.innerHTML = '<div class="calendly-inline-widget booker__calendly" data-url="' + esc(url) + '"></div>' +
+      '<p class="booker__fallback font-XS">Calendar not loading? <a href="' + esc(BOOK.calendlyUrl) + '" target="_blank" rel="noopener">Open the booking page</a>.</p>';
     var s = document.createElement('script');
     s.src = 'https://assets.calendly.com/assets/external/widget.js';
     s.async = true;
     document.body.appendChild(s);
+    // Calendly reports a finished booking via postMessage
+    window.addEventListener('message', function (e) {
+      if (e.origin === 'https://calendly.com' && e.data && e.data.event === 'calendly.event_scheduled') {
+        root.dispatchEvent(new CustomEvent('pv:booked', { detail: { provider: 'calendly' }, bubbles: true }));
+      }
+    });
+    return;
+  }
+
+  /* ---------- Live: Google Calendar appointment schedule ---------- */
+  if (LIVE && isHttps(BOOK.googleScheduleUrl)) {
+    var g = BOOK.googleScheduleUrl + (BOOK.googleScheduleUrl.indexOf('?') > -1 ? '&' : '?') + 'gv=true';
+    root.classList.add('booker--embed');
+    root.innerHTML = '<iframe class="booker__iframe" src="' + esc(g) + '" title="Book a free 30-minute consultation" loading="lazy"></iframe>' +
+      '<p class="booker__fallback font-XS">Calendar not loading? <a href="' + esc(BOOK.googleScheduleUrl) + '" target="_blank" rel="noopener">Open the booking page</a>.</p>';
+    return;
+  }
+
+  /* ---------- Live with no scheduler yet: request a time by message ---------- */
+  if (LIVE) {
+    root.classList.add('booker--fallback');
+    root.innerHTML =
+      '<div class="success">' +
+        '<h3 class="font-L">Request a time</h3>' +
+        '<p class="success__text font-XM">Send a short message with a few days and times that suit you, and we\'ll confirm your free 30-minute Google Meet by email.</p>' +
+        '<a href="#contact" class="buttonArrow" data-color="dark"><span class="button__title">Send a message</span><span class="button__arrow" aria-hidden="true"><svg class="icon icon--a1"><use href="#i-arrow"/></svg><svg class="icon icon--a2"><use href="#i-arrow"/></svg></span></a>' +
+      '</div>';
     return;
   }
 

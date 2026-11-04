@@ -15,7 +15,8 @@
   // Social links from config
   document.querySelectorAll('[data-social]').forEach(function (a) {
     var url = CFG.social && CFG.social[a.dataset.social];
-    if (url) a.href = url;
+    if (/^https:\/\//i.test(url || '')) a.href = url;
+    else a.hidden = true; // empty in config = no link shown
   });
   if (!(CFG.effects && CFG.effects.vortexOverlay)) docEl.classList.add('no-vortex');
 

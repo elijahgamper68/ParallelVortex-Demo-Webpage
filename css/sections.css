@@ -294,6 +294,10 @@
 .booker__form { display: flex; flex-direction: column; gap: 1.8rem; }
 .booker__actions { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; margin-top: 1.6rem; }
 .booker__calendly { min-height: 70rem; }
+.booker--embed { padding: 1.2rem; background: var(--white); border: .1rem solid var(--slate); }
+.booker__iframe { display: block; width: 100%; height: 72rem; border: 0; background: var(--white); }
+.booker__fallback { margin-top: 1.2rem; color: var(--grey); padding: 0 1rem 1rem; }
+.booker__fallback a { color: var(--off-black); text-decoration: underline; text-underline-offset: .3rem; }
 
 /* ==========================================================================
    Sessions & services
@@ -420,3 +424,26 @@
 .navigationFooter__bottomSection--3 { grid-column: 2 / -2; padding: 2.5rem 0; display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; color: var(--stone); }
 .navigationFooter__social .buttonLine .icon { width: 1.4rem; height: 1.4rem; }
 .navigationFooter :focus-visible { outline: .1rem dashed var(--slate); outline-offset: .2rem; }
+
+/* Privacy links */
+.contact__privacy { color: var(--grey); margin-top: .4rem; }
+.contact__privacy a, .navigationFooter__privacy { text-decoration: underline; text-underline-offset: .3rem; text-decoration-thickness: .1rem; }
+.contact__privacy a { color: var(--off-black); }
+.navigationFooter__privacy { color: var(--slate); }
+@media (hover: hover) { .navigationFooter__privacy:hover { color: var(--white); } }
+
+/* Simple content pages (privacy, 404) */
+.page { min-height: 100vh; background: var(--white); }
+.page__bar { grid-column: 2 / -2; display: flex; justify-content: space-between; align-items: center; padding: 3.5rem 0 2rem; border-bottom: .1rem solid var(--slate); }
+.page__bar .wordmark { color: var(--night-black); }
+.page__body { grid-column: 2 / -2; padding: 6rem 0 10rem; max-width: 76rem; }
+.page__body h1 { margin-bottom: 1.6rem; }
+.page__meta { color: var(--grey); margin-bottom: 5rem; }
+.page__body h2 { margin: 4.4rem 0 1.2rem; }
+.page__body p, .page__body li { color: var(--coal); font-size: 1.6rem; line-height: 1.6; max-width: 66ch; }
+.page__body ul { list-style: disc; padding-left: 2rem; margin-top: .8rem; }
+.page__body li + li { margin-top: .6rem; }
+.page__body a { color: var(--off-black); text-decoration: underline; text-underline-offset: .3rem; }
+.page__actions { margin-top: 5rem; display: flex; gap: 3rem; flex-wrap: wrap; }
+.page__body ul + p, .page__body p + p { margin-top: 1.6rem; }
+.booker--fallback { min-height: 0; }
