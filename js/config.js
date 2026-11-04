@@ -40,9 +40,9 @@ window.PV_CONFIG = {
 
   // Real profile links. Leave one as '' to hide that link everywhere.
   social: {
-    linkedin: 'https://www.linkedin.com/',
-    instagram: 'https://www.instagram.com/',
-    facebook: 'https://www.facebook.com/',
+    linkedin: '',
+    instagram: '',
+    facebook: 'https://www.facebook.com/profile.php?id=61593232457806',
   },
 
   // Demo booking availability
