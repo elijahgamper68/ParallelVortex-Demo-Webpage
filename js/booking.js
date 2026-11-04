@@ -1,7 +1,8 @@
 /* ==========================================================================
    Booking widget: calendar > time slot > details > confirmation
-   Live mode swaps in the real scheduler from PV_CONFIG.booking:
-   a Calendly inline embed, or a Google Calendar appointment schedule.
+   A configured scheduler is always used (demo or live mode): a Calendly
+   inline embed, or a Google Calendar appointment schedule. The built-in
+   demo calendar only appears when neither is set and mode is 'demo'.
    ========================================================================== */
 (function () {
   'use strict';
@@ -17,9 +18,9 @@
   var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;'); };
   var isHttps = function (u) { return /^https:\/\/[^\s"']+$/i.test(u || ''); };
 
-  /* ---------- Live: Calendly ---------- */
-  if (LIVE && isHttps(BOOK.calendlyUrl)) {
-    var url = BOOK.calendlyUrl + (BOOK.calendlyUrl.indexOf('?') > -1 ? '&' : '?') + 'hide_gdpr_banner=1';
+  /* ---------- Calendly ---------- */
+  if (isHttps(BOOK.calendlyUrl)) {
+    var url = BOOK.calendlyUrl + (BOOK.calendlyUrl.indexOf('?') > -1 ? '&' : '?') + 'hide_gdpr_banner=1&primary_color=262626&text_color=111111';
     root.classList.add('booker--embed');
     root.innerHTML = '<div class="calendly-inline-widget booker__calendly" data-url="' + esc(url) + '"></div>' +
       '<p class="booker__fallback font-XS">Calendar not loading? <a href="' + esc(BOOK.calendlyUrl) + '" target="_blank" rel="noopener">Open the booking page</a>.</p>';
@@ -36,8 +37,8 @@
     return;
   }
 
-  /* ---------- Live: Google Calendar appointment schedule ---------- */
-  if (LIVE && isHttps(BOOK.googleScheduleUrl)) {
+  /* ---------- Google Calendar appointment schedule ---------- */
+  if (isHttps(BOOK.googleScheduleUrl)) {
     var g = BOOK.googleScheduleUrl + (BOOK.googleScheduleUrl.indexOf('?') > -1 ? '&' : '?') + 'gv=true';
     root.classList.add('booker--embed');
     root.innerHTML = '<iframe class="booker__iframe" src="' + esc(g) + '" title="Book a free 30-minute consultation" loading="lazy"></iframe>' +

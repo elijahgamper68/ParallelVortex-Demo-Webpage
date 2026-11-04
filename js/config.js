@@ -2,9 +2,10 @@
    Parallel Vortex site settings
    This is the only file that needs editing to go live. See LAUNCH.md.
 
-   mode: 'demo' runs every flow with built-in demo screens (no accounts needed).
-         'live' uses the real services below. Anything left empty in live mode
-         falls back gracefully (e.g. no booking link shows "Request a time").
+   Any service filled in below is used straight away, in either mode.
+   mode: 'demo' fills the gaps with built-in demo screens (no accounts needed).
+         'live' never shows demo screens: anything still empty falls back
+         gracefully (e.g. no booking link shows "Request a time").
    After editing, run:  node tools/go-live.js   to check everything is ready.
    ========================================================================== */
 window.PV_CONFIG = {
@@ -16,7 +17,7 @@ window.PV_CONFIG = {
   booking: {
     // Use ONE of these. Calendly wins if both are filled.
     // Calendly: the event link, e.g. 'https://calendly.com/parallel-vortex/30min'
-    calendlyUrl: '',
+    calendlyUrl: 'https://calendly.com/vortextemp67/30min',
     // Google Calendar appointment schedule booking page link,
     // e.g. 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ...'
     googleScheduleUrl: '',

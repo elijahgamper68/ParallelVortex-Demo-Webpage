@@ -293,7 +293,8 @@
 .booker__recap strong { font-weight: 400; }
 .booker__form { display: flex; flex-direction: column; gap: 1.8rem; }
 .booker__actions { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; margin-top: 1.6rem; }
-.booker__calendly { min-height: 70rem; }
+.booker__calendly { height: 74rem; min-width: 32rem; }
+@media (max-width: 767px) { .booker__calendly { height: 106rem; } }
 .booker--embed { padding: 1.2rem; background: var(--white); border: .1rem solid var(--slate); }
 .booker__iframe { display: block; width: 100%; height: 72rem; border: 0; background: var(--white); }
 .booker__fallback { margin-top: 1.2rem; color: var(--grey); padding: 0 1rem 1rem; }

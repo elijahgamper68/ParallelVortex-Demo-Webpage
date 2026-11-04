@@ -1,7 +1,7 @@
 /* ==========================================================================
    Contact form
-   Demo mode shows the success state without sending anything.
-   Live mode sends to whichever backend PV_CONFIG.contact names:
+   Sends to whichever backend PV_CONFIG.contact names, in either mode.
+   With none set, demo mode just shows the success state:
      netlify: true      -> Netlify Forms (form-encoded POST to the site itself)
      endpoint: '...'    -> JSON POST (Formspree and similar)
      formsubmitEmail    -> FormSubmit's AJAX endpoint
@@ -23,11 +23,10 @@
   var SUBJECT = 'New message from the Parallel Vortex website';
 
   function backend() {
-    if (!LIVE) return 'demo';
     if (C.netlify) return 'netlify';
     if (/^https:\/\//i.test(C.endpoint || '')) return 'endpoint';
     if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(C.formsubmitEmail || '')) return 'formsubmit';
-    return 'none';
+    return LIVE ? 'none' : 'demo';
   }
   PV.contactBackend = backend();
   if (PV.contactBackend === 'none' && window.console) console.warn('[Parallel Vortex] Live mode has no contact backend set in js/config.js');
