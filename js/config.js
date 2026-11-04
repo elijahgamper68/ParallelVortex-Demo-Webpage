@@ -31,9 +31,11 @@ window.PV_CONFIG = {
     // 2. Any form service that accepts JSON, e.g. Formspree:
     //    'https://formspree.io/f/abcdwxyz'
     endpoint: '',
-    // 3. FormSubmit (no account): just the email address that should receive
-    //    messages. The first message triggers a one-time confirmation email.
-    formsubmitEmail: '',
+    // 3. FormSubmit (no account): the email address that should receive
+    //    messages. The first message triggers a one-time activation email.
+    //    After activating, FormSubmit gives a random code you can paste here
+    //    instead of the email, so the address isn't visible in the code.
+    formsubmitEmail: 'counterjunction@gmail.com',
   },
 
   // Real profile links. Leave one as '' to hide that link everywhere.

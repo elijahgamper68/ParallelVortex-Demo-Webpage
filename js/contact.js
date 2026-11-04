@@ -25,7 +25,7 @@
   function backend() {
     if (C.netlify) return 'netlify';
     if (/^https:\/\//i.test(C.endpoint || '')) return 'endpoint';
-    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(C.formsubmitEmail || '')) return 'formsubmit';
+    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(C.formsubmitEmail || '') || /^[a-z0-9]{16,}$/i.test(C.formsubmitEmail || '')) return 'formsubmit';
     return LIVE ? 'none' : 'demo';
   }
   PV.contactBackend = backend();

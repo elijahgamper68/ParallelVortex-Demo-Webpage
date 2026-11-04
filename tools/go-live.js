@@ -52,7 +52,8 @@ if (https(b.calendlyUrl)) {
 const c = C.contact || {};
 if (c.netlify) ok('Contact form', 'Netlify Forms (turn on email notifications in the Netlify dashboard)');
 else if (https(c.endpoint)) ok('Contact form', 'endpoint ' + c.endpoint);
-else if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.formsubmitEmail || '')) ok('Contact form', 'FormSubmit to ' + c.formsubmitEmail + ' (confirm the activation email after the first test message)');
+else if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.formsubmitEmail || '')) ok('Contact form', 'FormSubmit to ' + c.formsubmitEmail + ' (activate from the first message, then swap in the private code FormSubmit gives you)');
+else if (/^[a-z0-9]{16,}$/i.test(c.formsubmitEmail || '')) ok('Contact form', 'FormSubmit (private code, email hidden)');
 else miss('Contact form', 'no backend set. Messages would not be delivered');
 
 // --- Social
